@@ -1,7 +1,10 @@
 /*
 * author：xuqiang
-* cascaderList: 下拉的列表，为数组，属性为id,name,children，没有children为无子类
-* click：广播事件，为数组，广播出选中的节点对象
+* max： 最大值
+* min：最小值
+* initVal：初始值
+* width：暂时开放，用于指定宽度，默认是按照父元素的宽度
+* output：输出，广播出输入值
 */
 
 import { Component, OnInit, Input, Output, EventEmitter, HostListener } from '@angular/core';
@@ -17,6 +20,7 @@ export class NumberComponent{
 	@Input() min: number = -10;
 	@Input() initVal: string = '0';
 	@Input() width: string = '100px';
+	@Output() output: EventEmitter<any> = new EventEmitter();
 
 	keydown($event){
 		let keyCode = $event.keyCode;
@@ -26,23 +30,13 @@ export class NumberComponent{
 			(keyCode > 47 && keyCode < 58)
 			// 小键盘数字
 			|| (keyCode > 95 && keyCode < 106)
-			// backspace
-			|| keyCode == 8
-			// up
-			|| keyCode == 38
-			// down
-			|| keyCode == 40
-			// 。
-			|| keyCode == 110
-			// -
-			|| keyCode == 109
-			// -
-			|| keyCode == 189
 		){
-			return true;
+			let futureVal = parseFloat( ($event.target.value || '') + String.fromCharCode(keyCode) );
+
+			return futureVal >= this.min && futureVal <= this.max;
 		}
 
-		return false;
+		return keyCode == 8 || keyCode == 38 || keyCode == 40 || keyCode == 110 || keyCode == 109 || keyCode == 189 || keyCode == 190;
 	}
 
 	keyup($event){

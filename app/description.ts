@@ -174,9 +174,22 @@ cascaderSelect($<span class="hljs-keyword">event</span>){
 			timing: `<ul>
 			<li>当需要获取标准数值时。</li><ul>`,
 			tip: '',
-			html: ``,
-			js: ``,
-			annotation: ``
+			html: `&lt;<span class="hljs-built_in">number</span> [<span class="hljs-built_in">max</span>]=<span class="hljs-string">"max"</span> [<span class="hljs-built_in">min</span>]=<span class="hljs-string">"min"</span> [initVal]=<span class="hljs-string">"initVal"</span> [width]=<span class="hljs-string">"width"</span> (output)=<span class="hljs-string">"numInput($event)"</span>&gt;&lt;/<span class="hljs-built_in">number</span>&gt;`,
+			js: `<span class="hljs-keyword">private</span> <span class="hljs-string">max:</span> number = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">private</span> <span class="hljs-string">min:</span> number = -<span class="hljs-number">10</span>;
+<span class="hljs-keyword">private</span> <span class="hljs-string">initVal:</span> number = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">private</span> <span class="hljs-string">width:</span> string = <span class="hljs-string">'100px'</span>;
+output($event){
+	<span class="hljs-keyword">this</span>.initVal = $event;
+}`,
+			annotation: `/<span class="hljs-keyword">*</span>
+<span class="hljs-keyword">*</span> author：xuqiang
+<span class="hljs-keyword">*</span> max： 最大值
+<span class="hljs-keyword">*</span> min：最小值
+<span class="hljs-keyword">*</span> initVal：初始值
+<span class="hljs-keyword">*</span> width：暂时开放，用于指定宽度，默认是按照父元素的宽度
+<span class="hljs-keyword">*</span> output：输出，广播出输入值
+<span class="hljs-keyword">*</span>/`
 		},
 	}
 }
