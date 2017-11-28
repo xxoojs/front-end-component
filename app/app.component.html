@@ -1,0 +1,50 @@
+<div class="wapper">
+    <div class="header not-allow-select">
+        <a class="logo">
+            <img src="/images/logo.png" />
+            <span class="ft18">ANGULAR DESIGN</span>
+            <span class="ft12">code by xuqiang</span>
+        </a>
+    </div>
+    <div class="body">
+        <div class="nav">
+            <ul class="menu">
+                <li class="menu-first-level" *ngFor="let first of menuService.menus">
+                    <h4>{{first.title}}</h4>
+                    <ng-container  *ngFor="let second of first.children">
+                        <div class="menu-group-title">{{second.title}}</div>
+                        <ul *ngIf="second.children && second.children.length">
+                            <li class="menu-third-level" *ngFor="let third of second.children" [class.selected]="hash == third.hash" (click)="navigator(third)">
+                                <span>{{third.title}}</span>
+                                <span>{{third.chinese}}</span>
+                            </li>
+                        </ul>
+                    </ng-container>
+                </li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="markdown">
+                <div class="not-allow-select">
+                    <h1>
+                        {{note.title}}
+                        <span class="subtitle" [innerHTML]="note.subtitle"></span>
+                    </h1>
+                    <p [innerHTML]="note.description"></p>
+                    <h2><span>何时使用</span></h2>
+                    <p class="timing" [innerHTML]="note.timing"></p>
+                    <h2><span>组件演示</span></h2>
+                    <div class="tip" [innerHTML]="note.tip"></div>
+                    <router-outlet></router-outlet>
+                    <h2><span>如何使用？代码演示</span></h2>
+                    <h4>html代码：</h4>
+                </div>
+                <code class="syntaxhighlighter" [innerHTML]="note.html"></code>
+                <h4 class="not-allow-select">js代码：</h4>
+                <code class="syntaxhighlighter" [innerHTML]="note.js"></code>
+                <h4 class="not-allow-select">配置项注释：</h4>
+                <code class="syntaxhighlighter" [innerHTML]="note.annotation"></code>
+            </div>
+        </div>
+    </div>
+</div>

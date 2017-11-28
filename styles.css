@@ -1,0 +1,124 @@
+html{
+    background: #f0f2f5;
+}
+
+html, body, article, aside, blockquote, body, button, code, dd, details, div, dl, dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, input, legend, li, menu, nav, ol, p, pre, section, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: -apple-system,BlinkMacSystemFont,PingFang SC,Helvetica,Tahoma,Arial,Hiragino Sans GB,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,SimSun,\\5B8B\4F53,Heiti,\\9ED1\4F53,sans-serif;
+}
+
+.not-allow-select{
+    -webkit-user-select: none;
+    -webkit-font-smoothing: -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#loader {
+    font-size: 2em;
+    text-align: center;
+    margin-top: 20%;
+}
+
+.red{
+    color: red;
+}
+
+.ft18{
+    font-size: 18px;
+}
+
+.ft12{
+    font-size: 12px;
+}
+
+.markdown {
+    color: rgba(0,0,0,.65);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.markdown .tip{
+    margin-bottom: 10px;
+    color: #999;
+    font-size: 12px;
+}
+
+.markdown .timing ul{
+    list-style: circle;
+    margin-left: 20px;
+}
+
+.markdown h1 {
+    font-size: 28px;
+}
+
+.markdown h1 {
+    color: rgba(0,0,0,.85);
+    font-weight: 500;
+    line-height: 40px;
+    margin-bottom: 24px;
+    margin-top: 8px;
+    font-family: Lato,Helvetica Neue For Number,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.markdown h1 .subtitle {
+    font-weight: 400;
+    font-size: 90%;
+    margin-left: 12px;
+}
+
+.markdown a.edit-button {
+    line-height: 12px;
+    display: inline-block;
+    margin-left: 10px;
+    height: 12px;
+    text-decoration: none;
+}
+
+.markdown a.edit-button .anticon {
+    display: block;
+    font-size: 16px;
+}
+
+.markdown a.edit-button i {
+    color: #999;
+}
+
+.markdown p, .markdown pre {
+    margin: 1em 0;
+}
+
+.markdown h2 {
+    font-size: 22px;
+}
+
+.markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
+    color: rgba(0,0,0,.85);
+    font-family: Lato,Helvetica Neue For Number,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif;
+    margin: 1.6em 0 .6em;
+    font-weight: 500;
+}
+
+code{
+    display: block;
+    font-family: Source Code Pro,monospace!important;
+    color: #666;
+    font-size: 11pt!important;
+    line-height: 1.8!important;
+    white-space: pre-wrap!important;
+    word-break: break-all!important;
+    margin-left: 0!important;
+    text-align: left!important;
+    padding: 2px 8px 1px;
+    background-color: #f7f7f7;
+    border: 1px solid rgba(208,212,217,.5);
+}

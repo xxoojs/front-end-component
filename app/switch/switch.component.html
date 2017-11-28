@@ -1,0 +1,5 @@
+<div class="switch" [class.open]="isOpen" [class.close]="!isOpen" [style.width]="width" (click)="isOpen=!isOpen;clickEvt()">
+	<div class="button"></div>
+	<div class="open-label" *ngIf="isOpen">{{ labels['open'] || '开' }}</div>
+	<div class="close-label" *ngIf="!isOpen">{{ labels['close'] || '关' }}</div>
+</div>

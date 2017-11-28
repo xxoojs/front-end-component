@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="/">
+    <title>front-end-component</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./highlight.css" />
+    <link rel="stylesheet" href="./fonts/font.css" />
+</head>
+
+<body>
+    <my-app>
+        <p id="loader">Loading...</p>
+    </my-app>
+    <script>
+        var timeout = 200;
+        var signText = "Loading";
+        var regexp = new RegExp("^Loading([.]*)");
+
+        function showDot() {
+            var loader = document.getElementById('loader');
+            if (loader instanceof HTMLElement) {
+                var result = loader.innerHTML.match(regexp);
+                if (result && result.length === 2) {
+                    loader.innerHTML = signText + (result[1].length > 3 ? '.' : (result[1] + '.'));
+                }
+                setTimeout(showDot, timeout);
+            }
+        }
+        showDot();
+    </script>
+</body>
+</html>
