@@ -4,6 +4,7 @@
             <img src="/ng2component/images/logo.png" />
             <span class="ft18">ANGULAR DESIGN</span>
             <span class="ft12">code by xuqiang</span>
+            <span style="font-size: 12px;color: #999;">［tips:灰色的是todo，后续会开发起来］</span>
         </a>
     </div>
     <div class="body">
@@ -14,7 +15,7 @@
                     <ng-container  *ngFor="let second of first.children">
                         <div class="menu-group-title">{{second.title}}</div>
                         <ul *ngIf="second.children && second.children.length">
-                            <li class="menu-third-level" *ngFor="let third of second.children" [class.selected]="hash == third.hash" (click)="navigator(third)">
+                            <li class="menu-third-level" *ngFor="let third of second.children" [class.selected]="hash == third.hash" [class.todo]="third.todo" (click)="navigator(third)">
                                 <span>{{third.title}}</span>
                                 <span>{{third.chinese}}</span>
                             </li>

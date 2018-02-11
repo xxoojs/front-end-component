@@ -16,7 +16,8 @@ export class MenuService {
             children: [{
                 title: 'Layout',
                 chinese: '布局',
-                hash: 'layout'
+                hash: 'layout',
+                todo: 1
             }]
         },{
             title: 'Navigation',
@@ -30,7 +31,8 @@ export class MenuService {
             children: [{
                 title: 'AutoComplete',
                 chinese: '自动完成',
-                hash: 'autocomplete'
+                hash: 'autocomplete',
+                todo: 1
             },{
                 title: 'Cascader',
                 chinese: '级联选择',
@@ -62,30 +64,36 @@ export class MenuService {
             },{
                 title: 'TreeSelect',
                 chinese: '树选择',
-                hash: 'treeselect'
+                hash: 'treeselect',
+                todo: 1
             },{
                 title: 'Upload',
                 chinese: '上传',
-                hash: 'upload'
+                hash: 'upload',
+                todo: 1
             }]
         },{
             title: 'Data Display',
             children: [{
                 title: 'Avatar',
                 chinese: '头像',
-                hash: 'avator'
+                hash: 'avator',
+                todo: 1
             },{
                 title: 'Badge',
                 chinese: '徽标数',
-                hash: 'badge'
+                hash: 'badge',
+                todo: 1
             },{
                 title: 'Card',
                 chinese: '卡片',
-                hash: 'card'
+                hash: 'card',
+                todo: 1
             },{
                 title: 'Carousel',
                 chinese: '走马灯',
-                hash: 'carousel'
+                hash: 'carousel',
+                todo: 1
             },{
                 title: 'Tooltip',
                 chinese: '文字提示',
@@ -97,7 +105,8 @@ export class MenuService {
             },{
                 title: 'Tabs',
                 chinese: '标签页',
-                hash: 'tabs'
+                hash: 'tabs',
+                todo: 1
             },{
                 title: 'Tag',
                 chinese: '标签',
@@ -105,18 +114,21 @@ export class MenuService {
             },{
                 title: 'Tree',
                 chinese: '树形控件',
-                hash: 'tree'
+                hash: 'tree',
+                todo: 1
             }]
         },{
             title: 'Feedback',
             children: [{
                 title: 'Alert',
                 chinese: '警告提示',
-                hash: 'feedback'
+                hash: 'feedback',
+                todo: 1
             },{
                 title: 'Spin',
                 chinese: '加载中',
-                hash: 'spin'
+                hash: 'spin',
+                todo: 1
             }]
         }]
     }];
