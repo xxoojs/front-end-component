@@ -1,0 +1,16 @@
+{
+  "name": "ipharmacare-table",
+  "version": "0.32.7",
+  "description": "逸曜前端团队通用表格组件，基于最早安雯创建国明修改的版本进一步改进",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "table"
+  ],
+  "author": "adu",
+  "license": "Apache-2.0",
+  "_from": "ipharmacare-table@0.32.1",
+  "_resolved": "http://10.1.1.99:4837/ipharmacare-table/-/ipharmacare-table-0.32.1.tgz"
+}

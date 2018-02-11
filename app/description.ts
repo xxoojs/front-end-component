@@ -191,5 +191,189 @@ output($event){
 <span class="hljs-keyword">*</span> output：输出，广播出输入值
 <span class="hljs-keyword">*</span>/`
 		},
+		// 文字提示 －－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+		tooltip: {
+			title: 'Tooltip',
+			subtitle: '文字提示',
+			description: '简单的文字提示气泡框。',
+			timing: `<ul>
+			<li>鼠标移入则显示提示，移出消失，气泡浮层不承载复杂文本和操作。</li>
+			<li>可用来代替系统默认的 title 提示，提供一个按钮/文字/操作的文案解释。</li><ul>`,
+			// tip: '下面这个tooltip作为展示，因为是提供直接npm install安装使用的，所以在demo这里展示排版会稍有点问题',
+			tip: ``,
+			html: `<span class="hljs-tag">&lt;<span class="hljs-title">tooltip</span> [<span class="hljs-attribute">el</span>]=<span class="hljs-value">"el"</span> [<span class="hljs-attribute">label</span>]=<span class="hljs-value">"label"</span> [<span class="hljs-attribute">direction</span>]=<span class="hljs-value">"direction"</span> [<span class="hljs-attribute">width</span>]=<span class="hljs-value">"width"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">tooltip</span>&gt;</span>`,
+			js: `<span class="hljs-keyword">private</span> el: HTMLElement;
+<span class="hljs-keyword">private</span> <span class="hljs-keyword">label</span>: <span class="hljs-keyword">string</span> = <span class="hljs-string">'我就是你的tooltip！'</span>;
+<span class="hljs-keyword">private</span> direction: <span class="hljs-keyword">string</span> = <span class="hljs-string">'right'</span>;
+<span class="hljs-keyword">private</span> width: <span class="hljs-keyword">string</span> = <span class="hljs-string">'150px'</span>;`,
+			annotation: `/*
+<span class="hljs-bullet">* </span>author：xuqiang
+<span class="hljs-bullet">* </span>el: HTMLElement-需要展示tooltip的元素
+<span class="hljs-bullet">* </span>label: tooltip里展示的内容
+<span class="hljs-bullet">* </span>direction: 展示的位置（上下左右）top|right|bottom|left
+<span class="hljs-bullet">* </span>width: tooltip的宽度 150px
+<span class="hljs-strong">*/</span>`
+		},
+		// 文字提示 －－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+		table: {
+			title: 'Table',
+			subtitle: '表格',
+			description: '展示行列数据。',
+			timing: `<ul>
+			<li>当有大量结构化的数据需要展现时；</li>
+			<li>当需要对数据进行排序、搜索、分页、自定义操作等复杂行为时。</li><ul>`,
+			tip: '',
+			html: `<ip-table [table]="table">
+	<template #tableTemplate let-trow let-index="index">
+		<td  *ngIf="index%2 == 1">{{index}}</td>
+		<td  *ngIf="index%2 == 1">{{trow.name}}</td>
+		<td  *ngIf="index%2 == 1">{{trow.level}}</td>
+		<td  *ngIf="index%2 == 1">{{trow.area}}</td>
+		<td  *ngIf="index%2 == 1">{{trow.currentStatus}}</td>
+		<td  *ngIf="index%2 == 1">{{trow.purchaseVersion}}</td>
+		<td  *ngIf="index%2 == 1"><span class="time-span">{{trow.implementTime}}</span> <span class="time-span">{{trow.implementTime}}</span></td>
+		<td  *ngIf="index%2 == 1"><span class="time-span">{{trow.onlineTime}}</span> <span class="time-span">{{trow.onlineTime}}</span></td>
+		<td  *ngIf="index%2 == 1"><span class="time-span">{{trow.checkTime}}</span> <span class="time-span">{{trow.checkTime}}</span></td>
+		<td  *ngIf="index%2 == 1">{{trow.businessPerson}}</td>
+		<td  *ngIf="index%2 == 1"><span class="time-span">{{trow.updateTime}}</span> <span class="time-span">{{trow.updateTime}}</span></td>
+		<td  *ngIf="index%2 == 1">
+		<a>修改</a>&nbsp;
+		<a>授权码管理</a>&nbsp;
+		<a>删除</a>
+		</td>
+	</template>
+</ip-table>`,
+			js: `
+table = {
+	title:[
+		{
+			name: '序号',
+			type: 'index',
+			width: "4%"
+		}, {
+			name: '机构名称',
+			width: "8%"
+		}, {
+			name: '级别',
+			width: "6%"
+		}, {
+			name: '区域',
+			width: "8%"
+		}, {
+			name: '医院状态',
+			width: "6%"
+		}, {
+			name: '系统版本',
+			width: "6%"
+		}, {
+			name: '实施时间',
+			width: "9%"
+		}, {
+			name: '上线时间',
+			width: "9%"
+		}, {
+			name: '验收时间',
+			width: "9%"
+		}, {
+			name: '项目负责人',
+			width: "8%"
+		}, {
+			name: '最后更新时间',
+			width: "9%"
+		}, {
+			name: '操作',
+			width: "18%"
+		}
+	],
+	url: '/api/v1/hospitalList?numPerPage={pageSize}&pageNum={currentPage}',
+	hasCheckbox: false,
+	duplicateRow: true
+}
+			`,
+			annotation: ``
+		},
+		// 分页 －－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+		pagination: {
+			title: 'Pagination',
+			subtitle: '分页',
+			description: '采用分页的形式分隔长列表，每次只加载一个页面。',
+			timing: `<ul>
+			<li>当加载/渲染所有数据将花费很多时间时；</li>
+			<li>可切换页码浏览数据。</li><ul>`,
+			tip: '',
+			html: `<span class="hljs-tag">&lt;<span class="hljs-title">pagination</span> [<span class="hljs-attribute">curPage</span>]=<span class="hljs-value">'curPage'</span> [<span class="hljs-attribute">totalPage</span>]=<span class="hljs-value">"totalPage"</span> [<span class="hljs-attribute">pageSize</span>]=<span class="hljs-value">"pageSize"</span> (<span class="hljs-attribute">click</span>)=<span class="hljs-value">"setPagination($event)"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">pagination</span>&gt;</span>`,
+			js: `<span class="hljs-keyword">private</span> curPage = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">private</span> totalPage = <span class="hljs-number">50</span>;
+<span class="hljs-keyword">private</span> pageSize = <span class="hljs-number">10</span>;
+setPagination($<span class="hljs-keyword">event</span>){
+	<span class="hljs-keyword">this</span>.pageSize = $<span class="hljs-keyword">event</span>.pageSize
+	<span class="hljs-keyword">this</span>.curPage = $<span class="hljs-keyword">event</span>.curPage;
+}`,
+			annotation: `/<span class="hljs-keyword">*</span>
+<span class="hljs-keyword">*</span> author：xuqiang
+<span class="hljs-keyword">*</span> curPage：当前页数
+<span class="hljs-keyword">*</span> totalPage：总页数
+<span class="hljs-keyword">*</span> pageSize：每页显示数
+<span class="hljs-keyword">*</span>/`
+		},
+		// 按钮 －－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+		button: {
+			title: 'Button',
+			subtitle: '按钮',
+			description: '按钮用于开始一个即时操作。',
+			timing: `<ul>
+			<li>标记了一个（或封装一组）操作命令，响应用户点击行为，触发相应的业务逻辑。</li>
+			<ul>`,
+			tip: '引入button的专属css，然后直接使用就行了，暂时分为primary，default，dash，danger，disbale五种',
+			html: `<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"button"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"iph-btn iph-btn-primary"</span>&gt;</span>
+	<span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Primary<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>`,
+			js: `noBody`,
+			annotation: `这是一个css组件，把<span class="hljs-keyword">button</span>的css引入，直接用模版就可以用了`
+		},
+		// 标签 －－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+		tag: {
+			title: 'Tag',
+			subtitle: '标签',
+			description: '进行标记和分类的小标签。',
+			timing: `<ul>
+			<li>用于标记事物的属性和维度。</li>
+			<li>进行分类。</li><ul>`,
+			tip: '',
+			html: `&lt;<span class="hljs-keyword">tag</span> [<span class="hljs-keyword">tags</span>]=<span class="hljs-string">"tags"</span> [direction]=<span class="hljs-string">"direction"</span>&gt;&lt;/<span class="hljs-keyword">tag</span>&gt;`,
+			js: `<span class="hljs-keyword">private</span> tags: <span class="hljs-keyword">any</span>[] = [{
+	id: <span class="hljs-string">'1'</span>,
+	name: <span class="hljs-string">'Tag 1'</span>
+},{
+	id: <span class="hljs-string">'2'</span>,
+	name: <span class="hljs-string">'Tag 2'</span>
+},{
+	id: <span class="hljs-string">'3'</span>,
+	name: <span class="hljs-string">'Tag 3'</span>
+},{
+	id: <span class="hljs-string">'4'</span>,
+	name: <span class="hljs-string">'Tag 4'</span>
+}];
+<span class="hljs-keyword">private</span> direction: <span class="hljs-keyword">any</span> = <span class="hljs-string">'v'</span>;`,
+			annotation: `/<span class="hljs-keyword">*</span>
+<span class="hljs-keyword">*</span> author：xuqiang
+<span class="hljs-keyword">*</span> tags: 数组，默认为一个json数组，id，name为必须的属性
+  direction： 横向排版 h  纵向排版 v
+<span class="hljs-keyword">*</span>/`
+		},
+		// 进度条 －－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+		progress: {
+			title: 'Progress',
+			subtitle: '进度条',
+			description: '展示操作的当前进度。',
+			timing: `<ul>
+			<li>在操作需要较长时间才能完成时，为用户显示该操作的当前进度和状态。</li>
+			<li>当一个操作会打断当前界面，或者需要在后台运行，且耗时可能超过2秒时；</li>
+			<li>当需要显示一个操作完成的百分比时。</li><ul>`,
+			tip: '',
+			html: ``,
+			js: ``,
+			annotation: ``
+		},
 	}
 }

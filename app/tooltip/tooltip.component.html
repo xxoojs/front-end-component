@@ -1,0 +1,8 @@
+<div #test (mouseover)="mouseOver()" (mouseout)="mouseOut()" style="display: inline-block;width: 200px;border: 2px solid #D9D9D9;text-align: center;">我的tooltip在哪里？</div>
+<!-- <button #test>提交啊啊啊</button> -->
+<div #tooltip class="tooltip" [hidden]="isHid" [style.left]="position.left" [style.top]="position.top" [class.top]="direction == 'top'" [class.right]="direction == 'right'" [class.bottom]="direction == 'bottom'" [class.left]="direction == 'left'">
+	<div class="tooltip-arrow" [class.top]="direction == 'top'" [class.right]="direction == 'right'" [class.bottom]="direction == 'bottom'" [class.left]="direction == 'left'"></div>
+	<div class="tooltip-body" [style.width]="width" [class.top]="direction == 'top'" [class.right]="direction == 'right'" [class.bottom]="direction == 'bottom'" [class.left]="direction == 'left'">
+		<span>{{label}}</span>
+	</div>
+</div>

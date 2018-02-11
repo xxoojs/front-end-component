@@ -1,0 +1,76 @@
+<div class="pagination">
+	<div class="pagination-info">
+		<span>显示</span>
+		<div class="inline-block w70">
+			<select-component [optionList]="optionalList" [initVal]="pageSize" (select)="selectPage($event)"></select-component>
+		</div>
+		<span>条/页</span>
+		<span class="ml5">
+			共{{totalPage}}页
+		</span>
+	</div>
+	<div class="fr ml5 lt30">
+		<span>页</span>
+	</div>
+	<div class="fr inline-block">
+		<number [max]="totalPage" [min]="1" [initVal]="''" [width]="'70px'" (output)="numInput($event)"></number>
+	</div>
+	<div class="fr ml10 mr5 lt30">
+		<span>跳转到 </span>
+	</div>
+	<ul class="pagination-nums">
+		<li class="pagination-prev" (click)="prev()">
+			<a class="pagination-item-link"></a>
+		</li>
+
+		<!-- 小于7个的时候 -->
+		<ng-container *ngIf="totalPage <= 7">
+			<ng-container *ngFor="let noBody of meaninglessArr;let idx = index;">
+				<li class="pagination-item" (click)="setCurPage(idx+1)">{{idx + 1}}</li>
+			</ng-container>
+		</ng-container>
+
+
+		<!-- 大于7个的时候 靠前 -->
+		<ng-container *ngIf="totalPage > 7">
+			<!-- 后面有省略号 -->
+			<ng-container *ngIf="curPage < 5">
+				<ng-container *ngFor="let noBody of fixedLenArr;let idx = index;">
+					<li [class.pagination-item-active]="(idx+1) == curPage" class="pagination-item" (click)="setCurPage(idx+1)">{{idx + 1}}</li>
+				</ng-container>
+				<li *ngIf="totalPage > 7 && curPage < (totalPage - 2)" class="pagination-jump-next" (click)="goEnd()">
+					<a class="pagination-item-link"></a>
+				</li>
+				<li [class.pagination-item-active]="totalPage == curPage" class="pagination-item" (click)="setCurPage(totalPage)">{{totalPage}}</li>
+			</ng-container>
+			<!-- 前后都有省略号 -->
+			<ng-container *ngIf="curPage >= 5 && curPage <= (totalPage - 4)">
+				<li [class.pagination-item-active]="1 == curPage" class="pagination-item" (click)="setCurPage(1)">1</li>
+				<li class="pagination-jump-prev" (click)="goFirst()">
+					<a class="pagination-item-link"></a>
+				</li>
+				<ng-container *ngFor="let noBody of fixedLenArr;let idx = index;">
+					<li [class.pagination-item-active]="(curPage + idx + 1 - 3) == curPage" class="pagination-item" (click)="setCurPage(curPage + idx + 1 - 3)">{{curPage + idx + 1 - 3}}</li>
+				</ng-container>
+				<li class="pagination-jump-next" (click)="goEnd()">
+					<a class="pagination-item-link"></a>
+				</li>
+				<li [class.pagination-item-active]="totalPage == curPage" class="pagination-item" (click)="setCurPage(totalPage)">{{totalPage}}</li>
+			</ng-container>
+			<!-- 前面有省略号 -->
+			<ng-container *ngIf="curPage > (totalPage - 4)">
+				<li [class.pagination-item-active]="1 == curPage" class="pagination-item" (click)="setCurPage(1)">1</li>
+				<li class="pagination-jump-prev" (click)="goFirst()">
+					<a class="pagination-item-link"></a>
+				</li>
+				<ng-container *ngFor="let noBody of fixedLenArr;let idx = index;">
+					<li [class.pagination-item-active]="(totalPage + idx + 1 - 5) == curPage" class="pagination-item" (click)="setCurPage(totalPage + idx + 1 - 5)">{{totalPage + idx + 1 - 5}}</li>
+				</ng-container>
+			</ng-container>
+		</ng-container>
+		
+		<li class="pagination-next" (click)="next()">
+			<a class="pagination-item-link"></a>
+		</li>
+	</ul>
+</div>

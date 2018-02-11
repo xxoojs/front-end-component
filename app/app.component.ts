@@ -24,7 +24,7 @@ export class AppComponent{
         private description: Description
     ){
     	let parts = location.href.split('/');
-    	this.hash = parts[ parts.length -1 ] || 'radio';
+    	this.hash = parts[ parts.length -1 ] || 'datepicker';
 
         this.note = description.data[this.hash];
     }
