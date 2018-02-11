@@ -223,26 +223,13 @@ output($event){
 			<li>当有大量结构化的数据需要展现时；</li>
 			<li>当需要对数据进行排序、搜索、分页、自定义操作等复杂行为时。</li><ul>`,
 			tip: '',
-			html: `<ip-table [table]="table">
-	<template #tableTemplate let-trow let-index="index">
-		<td  *ngIf="index%2 == 1">{{index}}</td>
-		<td  *ngIf="index%2 == 1">{{trow.name}}</td>
-		<td  *ngIf="index%2 == 1">{{trow.level}}</td>
-		<td  *ngIf="index%2 == 1">{{trow.area}}</td>
-		<td  *ngIf="index%2 == 1">{{trow.currentStatus}}</td>
-		<td  *ngIf="index%2 == 1">{{trow.purchaseVersion}}</td>
-		<td  *ngIf="index%2 == 1"><span class="time-span">{{trow.implementTime}}</span> <span class="time-span">{{trow.implementTime}}</span></td>
-		<td  *ngIf="index%2 == 1"><span class="time-span">{{trow.onlineTime}}</span> <span class="time-span">{{trow.onlineTime}}</span></td>
-		<td  *ngIf="index%2 == 1"><span class="time-span">{{trow.checkTime}}</span> <span class="time-span">{{trow.checkTime}}</span></td>
-		<td  *ngIf="index%2 == 1">{{trow.businessPerson}}</td>
-		<td  *ngIf="index%2 == 1"><span class="time-span">{{trow.updateTime}}</span> <span class="time-span">{{trow.updateTime}}</span></td>
-		<td  *ngIf="index%2 == 1">
-		<a>修改</a>&nbsp;
-		<a>授权码管理</a>&nbsp;
-		<a>删除</a>
-		</td>
-	</template>
-</ip-table>`,
+			html: `&lt;table [table]=<span class="hljs-string">"table"</span> [condition]=<span class="hljs-string">"condition"</span>&gt;
+	&lt;<span class="hljs-keyword">template</span> <span class="hljs-comment">#tableTemplate let-trow let-index="index"&gt;</span>
+		&lt;td&gt;{{index}}&lt;/td&gt;
+		&lt;td&gt;{{trow.name}}&lt;/td&gt;
+		&lt;td&gt;{{trow.level}}&lt;/td&gt;
+	&lt;/<span class="hljs-keyword">template</span>&gt;
+&lt;/table&gt;`,
 			js: `
 table = {
 	title:[
@@ -290,7 +277,10 @@ table = {
 	duplicateRow: true
 }
 			`,
-			annotation: ``
+			annotation: `/<span class="hljs-keyword">*</span><span class="hljs-keyword">*</span>
+ <span class="hljs-keyword">*</span> table：村储的是table配置的如表头title等数据
+ <span class="hljs-keyword">*</span> condition：查询条件，如果查询条件没改变可是要求查询数据，需要加个时间戳
+ <span class="hljs-keyword">*</span>/`
 		},
 		// 分页 －－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
 		pagination: {

@@ -1,5 +1,6 @@
 /**
- *  @author: anwen
+ * table：村储的是table配置的如表头title等数据
+ * condition：查询条件，如果查询条件没改变可是要求查询数据，需要加个时间戳
  */
 import {
   Component,
@@ -134,7 +135,7 @@ class TableService {
 
 
 @Component({
-  selector: 'ip-table',
+  selector: 'table',
   template: require('./table.component.html'),
   styles: [
     require('./table.component.css') + ""
