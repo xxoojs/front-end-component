@@ -1,0 +1,10 @@
+<div #selectElement (click)="click($event)" [class.ant-select-open]="isOpen" class="ant-select ant-select-enabled">
+    <div class="ant-select-selection ant-select-selection--single">
+        <div class="ant-select-selection__rendered">
+            <div class="ant-select-selection-selected-value" style="display: block; opacity: 1;">
+                <span>{{initVal || '请选择'}}</span>
+            </div>
+        </div>
+        <span #selectArrow class="ant-select-arrow"><b></b></span>
+    </div>
+</div>

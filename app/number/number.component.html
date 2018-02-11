@@ -1,0 +1,12 @@
+<div class="num" [style.width]="width">
+	<input type="text" (keydown)="keydown($event)" (keyup)="keyup($event)" [(ngModel)]="initVal"/>
+
+	<div class="buttons">
+		<div class="button" (click)="up()">
+			<span class="up"></span>
+		</div>
+		<div class="button" (click)="down()">
+			<span class="down"></span>
+		</div>
+	</div>
+</div>
