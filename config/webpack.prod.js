@@ -12,7 +12,7 @@ module.exports = webpackMerge(commonConfig, {
 
   output: {
     path: helpers.root('dist'),
-    publicPath: '/ng2component/dist',
+    publicPath: '/ng2component/dist/',
     filename: '[name].[hash].js',
     chunkFilename: '[id].[hash].chunk.js'
   },
