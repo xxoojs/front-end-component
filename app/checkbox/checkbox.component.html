@@ -1,0 +1,7 @@
+<label class="ant-checkbox-wrapper" (click)="checkEvt()">
+	<span class="ant-checkbox" [class.ant-checkbox-checked]="isChecked == '0'">
+		<input type="checkbox" class="ant-checkbox-input" value="on">
+		<span class="ant-checkbox-inner"></span>
+	</span>
+	<span style="vertical-align: middle;" (click)="checkEvt()">{{label}}</span>
+</label>

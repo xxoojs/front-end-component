@@ -1,0 +1,6 @@
+<div class="tags">
+	<div *ngFor="let tag of tags" class="tag-item" [class.table]="direction == 'v'">
+		<span>{{tag.name}}</span>
+		<i class="ml5 anticon anticon-cross" (click)="del(tag)"></i>
+	</div>
+</div>

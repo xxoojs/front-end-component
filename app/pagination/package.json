@@ -1,0 +1,15 @@
+{
+  "name": "ipharmacare-pagination",
+  "version": "0.1.6",
+  "description": "徐强小神封装的翻页组件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ipharmacare-number": "0.1.1",
+    "ipharmacare-select": "0.1.1"
+  },
+  "author": "DemoXu",
+  "license": "Apache-2.0"
+}
