@@ -49,7 +49,7 @@ const routes: Routes = [
     },
     {
         path: 'table',
-        loadChildren: './table/demo.table.module#DemoTableModule'
+        loadChildren: './table/table.module#TableModule'
     },
     {
         path: 'pagination',

@@ -3,9 +3,10 @@ import { FormsModule }   from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { TableComponent,TChangeCell } from './table.component';
 import { TableModel } from './table.model';
+import { TableRoutingModule } from './table-routing.module';
 
-export { TableComponent } ;
-export { TableModel } ;
+// export { TableComponent } ;
+// export { TableModel } ;
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ export { TableModel } ;
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    TableRoutingModule
   ],
 })
 export class TableModule {}
