@@ -145,7 +145,7 @@ class TableService {
   ]
 })
 export class TableComponent implements OnInit, OnChanges {
-  @Input() table: TableModel;
+  @Input() table: TableModel = new TableModel();
   @Input() condition: string = "";
   @Input() isFixedHeader: boolean;
   @Input() noInit: boolean = false;
